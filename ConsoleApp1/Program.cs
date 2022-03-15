@@ -22,58 +22,63 @@ namespace ConsoleApp1.Model
 
             Weapon Silah = new Weapon(gulletutumu, gullesayi, bosalmavaxti, atismodu);
 
-
-            int key = 0;
-
-            do
-
+            if (gulletutumu > gullesayi)
             {
-                Console.WriteLine("Zehmet olmasa secim edin(1-6):");
-                key = Convert.ToInt32(Console.ReadLine());
+                int key = 0;
 
-                switch (key)
+                do
+
                 {
-                    case 1:
+                    Console.WriteLine("Zehmet olmasa secim edin(1-6):");
+                    key = Convert.ToInt32(Console.ReadLine());
 
-                        Silah.Shoot();
-                        break;
-                    case 2:
+                    switch (key)
+                    {
+                        case 1:
 
-                        Silah.Fire();
-                        break;
-                    case 3:
+                            Silah.Shoot();
+                            break;
+                        case 2:
 
-                        Silah.GetRemainBulletCount();
-                        break;
-                    case 4:
+                            Silah.Fire();
+                            break;
+                        case 3:
 
-                        Silah.Reload();
-                        break;
-                    case 5:
+                            Silah.GetRemainBulletCount();
+                            break;
+                        case 4:
+
+                            Silah.Reload();
+                            break;
+                        case 5:
 
 
-                        Silah.ChangeFireMode();
-                        break;
+                            Silah.ChangeFireMode();
+                            break;
 
-                    case 6:
-                        Console.WriteLine("Sagolunnn");
-                        break;
-                    case 0:
-                        Silah.GetInfo();
-                        break;
+                        case 6:
+                            Console.WriteLine("Sagolunnn");
+                            break;
+                        case 0:
+                            Silah.GetInfo();
+                            break;
 
-                    default:
-                        Console.WriteLine("Zehmet olmasa duzgun reqem secin");
-                        break;
+                        default:
+                            Console.WriteLine("Zehmet olmasa duzgun reqem secin");
+                            break;
 
+                    }
                 }
+                while (key != 6);
+                { }
+
+
+
             }
-            while (key != 6);
-            {   }
-
-
-
-
+            else
+            {
+                Console.WriteLine("Gulle sayi tutumdan boyuk ola bilmez");
+            }
 
             }
             }
